@@ -1,0 +1,8 @@
+.sidebar-menu {
+  font-size: 100px; /* Ajuste la taille du texte du menu */
+}
+
+.treeview-menu > li > a {
+  font-size: 50px;
+  padding: 5px 10px; /* Ajuste l'espacement des éléments de menu */
+}
