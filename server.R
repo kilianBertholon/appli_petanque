@@ -71,6 +71,23 @@ server <- function(input, output, session) {
   })
 
 
+  output$pts_enc_mean <- renderPlotly({
+    graph_mean_pts_enc <- ggplot(data_pts_enc, aes(x = Nom, y = Pts_Enc_Moy, fill = Pts_Enc_Moy)) + 
+      geom_bar(stat = "identity") + 
+      scale_fill_gradientn(colors = couleur_e(100), na.value = "white") +
+      geom_hline(aes(yintercept = mediane_e, linetype = "Médiane"), color = "black", lwd = 0.3) +
+      geom_hline(aes(yintercept = q25_e, linetype = "q25"), color = "green", lwd = 0.3) +
+      geom_hline(aes(yintercept = q75_e, linetype = "q75"), color = "red", lwd = 0.3) +
+      xlab("Nom") +
+      ylab("Moyenne Pts encaissés") +
+      ggtitle("Classement des joueurs par points moyens encaissés par partie") +
+      scale_linetype_manual(values = c("Médiane" = "dashed", "q25" = "dashed", "q75" = "dashed")) +
+      labs(linetype = "Statistiques")+
+      theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+    
+    graph_mean_pts_enc <- ggplotly(graph_mean_pts_enc)
+    graph_mean_pts_enc <- layout(graph_mean_pts_enc, title = list(x = 0.5))
+  })
 
 
 

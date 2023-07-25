@@ -5,9 +5,9 @@ account: app-biathlon
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9502675
-bundleId: 7492286
+bundleId: 7493919
 url: https://app-biathlon.shinyapps.io/MiaSanMia/
-when: 1690234619.40914
-lastSyncTime: 1690234619.40915
+when: 1690275567.60785
+lastSyncTime: 1690275567.60786
 asMultiple: FALSE
 asStatic: FALSE

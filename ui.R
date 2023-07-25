@@ -9,7 +9,9 @@ source("code.R")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  tags$head(tags$style(HTML("styles.css"))),
+  tags$head(tags$style(HTML("styles.css")),
+  tags$link(rel = "icon", href = "www/icone.ico", type = "image/x-icon")),
+  
 
   navbarPage(
   HTML('MiaSanMia'),
@@ -87,5 +89,6 @@ ui <- fluidPage(
   
   tabPanel("Classement",
            dataTableOutput('tableau_output'),
-           plotlyOutput('pts_mar_mean'))
+           plotlyOutput('pts_mar_mean'),
+           plotlyOutput("pts_enc_mean"))
 ))
