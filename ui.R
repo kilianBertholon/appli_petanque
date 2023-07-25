@@ -1,6 +1,8 @@
 library(shiny)
 library(shinysurveys)
 library(dplyr)
+library(ggplot2)
+library(plotly)
 
 ##Fichier de code utilisés
 source("code.R")
@@ -84,5 +86,6 @@ ui <- fluidPage(
            dataTableOutput('tableau_result')),
   
   tabPanel("Classement",
-           dataTableOutput('tableau_output'))
+           dataTableOutput('tableau_output'),
+           plotlyOutput('pts_mar_mean'))
 ))
