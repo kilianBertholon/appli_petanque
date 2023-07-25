@@ -6,7 +6,10 @@ library(dplyr)
 source("code.R")
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(navbarPage(
+ui <- fluidPage(
+  tags$head(tags$style(HTML("styles.css"))),
+
+  navbarPage(
   HTML('MiaSanMia'),
   tabPanel('Importation résultats',
            fluidRow(
@@ -42,7 +45,7 @@ ui <- fluidPage(navbarPage(
                    h4(""),
                    numberInput(
                      "score_E1",
-                     "",
+                     "Score E1",
                      value = NULL,
                      min = 0,
                      max = 13
@@ -53,7 +56,7 @@ ui <- fluidPage(navbarPage(
                    h4(""),
                    numberInput(
                      "score_E2",
-                     "",
+                     "Score E2",
                      value = NULL,
                      min = 0,
                      max = 13
@@ -72,18 +75,14 @@ ui <- fluidPage(navbarPage(
                                     maxItems = 5)
                    )
                  ),
-                 actionButton("ajouter_resultats", "Ajouter les résultats à la base de données")
+                 actionButton("ajouter_resultats", "Ajouter les résultats à la base de données", style =   "background-color: black; color: white;cursor: pointer;")
                )
              )
-           ),
-           # Autres éléments du menu),
-           tabPanel('Résultats'),
-
-           tabPanel("Classement",
-                    fluidRow(column(
-                      width = 12,
-                      box(dataTableOutput("classement"))
-                    )))
-  ))
-)
+           )),
+  # Autres éléments du menu),
+  tabPanel('Résultats',
+           dataTableOutput('tableau_result')),
   
+  tabPanel("Classement",
+           dataTableOutput('tableau_output'))
+))

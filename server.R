@@ -5,7 +5,7 @@ source("function.R")
 
 
 
-server <- function(input, output) {
+server <- function(input, output, session) {
 ###############################################################################
 ###############################################################################
 ####                        Page importation des données                  #####
@@ -38,24 +38,17 @@ server <- function(input, output) {
     
     
   })
-  
-  
-  
-  
-  
-  ##Afficher le tableau des joueurs
-  # output$tableau_output <- renderDataTable({
-  #   donnees
-  # })
-  # output$tableau_result <- renderDataTable({
-  #   base
-  # })
+
+  #Afficher le tableau des joueurs
+  output$tableau_output <- renderDataTable({
+    classement_tri
+  })
+  output$tableau_result <- renderDataTable({
+    base
+  })
   
 
-  #######Page classement 
-  output$classement <- renderDataTable({
-    classement
-  })
+
 
 
 

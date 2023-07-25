@@ -6,3 +6,18 @@
   font-size: 50px;
   padding: 5px 10px; /* Ajuste l'espacement des éléments de menu */
 }
+
+body {
+  background-color: #f0f0f0;
+}
+
+h1 {
+  color: #333333;
+}
+
+/*Modifier la couleur des boutons */
+.bouton-import {
+  background-color: red;
+  color: black;
+  cursor: pointer;
+}
