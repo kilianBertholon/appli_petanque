@@ -1,6 +1,8 @@
 library(readODS)
 library(dplyr)
 
+source("function.R")
+
 chemin_fichier <- "dataset/nom.ods"
 
 donnees <- read_ods(chemin_fichier)
@@ -41,6 +43,7 @@ classement$DiffMoy = round(classement$DiffMoy, 3)
 classement_tri <- classement[order(-classement$RatioVictoire, -classement$DiffMoy), ] 
 
 classement_tri$Classement <- seq(nrow(classement_tri))
+
 classement_tri <- classement_tri[, c("Classement", "Nom", "MJ", "Victoire", "Defaite", "Difference", "RatioVictoire", "DiffMoy")]
 
 
@@ -65,5 +68,4 @@ mediane_e <- median(data_pts_enc$Pts_Enc_Moy)
 q25_e <- quantile(data_pts_enc$Pts_Enc_Moy, 0.25)
 q75_e <- quantile(data_pts_enc$Pts_Enc_Moy, 0.75)
 couleur_e <- colorRampPalette(c("green", "yellow", "red"))
-
 

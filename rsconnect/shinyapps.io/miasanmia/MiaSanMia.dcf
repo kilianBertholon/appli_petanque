@@ -1,13 +1,13 @@
 name: MiaSanMia
 title: MiaSanMia
 username:
-account: app-biathlon
+account: miasanmia
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9502675
-bundleId: 7494756
+bundleId: 7643037
 url: https://miasanmia.shinyapps.io/MiaSanMia/
-when: 1690291432.64176
-lastSyncTime: 1690291432.64177
+when: 1693832037.57513
+lastSyncTime: 1693832037.57514
 asMultiple: FALSE
 asStatic: FALSE

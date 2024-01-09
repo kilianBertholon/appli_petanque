@@ -8,6 +8,7 @@ source("function.R")
 
 
 server <- function(input, output, session) {
+  
 ###############################################################################
 ###############################################################################
 ####                        Page importation des données                  #####
@@ -42,9 +43,11 @@ server <- function(input, output, session) {
   })
 
   #Afficher le tableau des joueurs
+  # Appliquer le style aux carrés dans la colonne "État de forme" de la table
   output$tableau_output <- renderDataTable({
     classement_tri
   })
+  
   output$tableau_result <- renderDataTable({
     base
   })
@@ -88,7 +91,6 @@ server <- function(input, output, session) {
     graph_mean_pts_enc <- ggplotly(graph_mean_pts_enc)
     graph_mean_pts_enc <- layout(graph_mean_pts_enc, title = list(x = 0.5))
   })
-
 
 
 }

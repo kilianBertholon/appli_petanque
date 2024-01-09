@@ -9,10 +9,7 @@ source("code.R")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
-  tags$head(tags$style(HTML("styles.css")),
-  tags$link(rel = "icon", href = "www/icone.ico", type = "image/x-icon")),
-  
-
+  tags$head(tags$style(HTML("styles.css"))),
   navbarPage(
   HTML('MiaSanMia'),
   tabPanel('Importation résultats',
